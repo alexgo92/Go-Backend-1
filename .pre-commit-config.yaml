@@ -11,6 +11,6 @@ repos:
   hooks:
     - id: go-fmt
     - id: go-imports
-    - id: golangci-lint
+    #- id: golangci-lint
     #- id: go-unit-tests
     #- id: go-build
