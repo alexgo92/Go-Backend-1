@@ -1,0 +1,33 @@
+# Решение задания преведено в методичке (смысл задания?)
+paths:
+  /items:
+    get:
+      summary: Lists Items with filters
+      operationId: ListItems
+      parameters:
+        - name: price_min
+          in: query
+          description: Lower price limit
+          required: false
+          schema:
+            type: integer
+            format: int64
+        - name: price_max
+          in: query
+          description: Upper price limit
+          required: false
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Item'
+        400:
+          description: Invalid price range
+          content: { }
